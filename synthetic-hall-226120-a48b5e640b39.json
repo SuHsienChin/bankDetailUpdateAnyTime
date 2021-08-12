@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "synthetic-hall-226120",
+  "private_key_id": "a48b5e640b39421b4930c7ae30d301779cfc7281",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCYKYIzFsyzlfXB\nXJ44bnAVaTFK3ZL0pWJa3vgoCQq9csEMjVNW7nMn3gzP4Z8awzhePm63e2zIXChM\nANX/tfuSfMMyaCAPZl+S+U3UEy/u6NcnY5hWwKz2Ox9BHBQhf1Dn6q4O1OK4I7G2\nj+lDzn/irYzeGO7KkiMD32CKPzNtYK6w3Fxmvp6gG+0nWhpWJCAkDD+LGe56Y4L8\neDrT81MNhn7CD1KgEcZPgWgHt8Bi9y7EzXJL4fnbeIyEVIrcx4LkpGucoGbXwWI8\nYBObFwcyx0ke5WV4jBdCKxf3V9hiDnuvBd7X+SD3Xhz3MWidvd+qJhd4wEGTtydx\n3r4YpdltAgMBAAECggEAGntu65FWQxMgWGzUJKIj47YRHCSABRAblBEmQ2F/ewVT\nz+lwzbpmVFPzCuMLm87KKqzW/BwBDMXtRX0HwZ9cj1wjZMx2d/erPpshDn3gY8Ym\nW/abds3FzHzxrZVDc6kC3bocXPx0EPQ1Y76cLG7uFvd5gtX4CU1xxqTD2ouxWaGr\nUiu1OhrV6GsI3p/uW61X4GhfsbYiH5KP2AzU+ddPdAlS/TfYOOjQBMFK6F37oNV4\nuY061RyqW0bzYkrs/Zr8pm40B+duxlFZo8EYDvfqM1Tj6r36R1P+AX761TVPLRUk\nw9iUEUQtI07DTd72kLG04+6xisc1tsB59/NRxjyYwQKBgQDGb+haX1Kv93055v0T\nK4OLo1+GsDRkzd9JwZ1Mvi16meHwMoMmZJAQxCHvngK3ln8i5QDDTYJDQJUd+Kt0\njNFjNRB1PTiqERKQw11FFvN7GbLGNkURxCDN1L4zpGyDMyFqlgT+OzGfK4L9WiIm\n7W5pWZZztDUWNQTg/SfxMiQGZQKBgQDETS9GQ5ItVwk8qcnzYSD4vp2MJOCDk10M\ngc8Z7Rjnxf78CDCF0DMWmniSGMw97bTs4MnB1taXI63/3fq1+CjjGWgBjCvXOJuE\nX8Re6+wJ5JSvck1Zjk1zaOoUN0PBOLRgNtMAzRL0rY7vB56ICXQCx4Z+haNDedmJ\nYBTNrGmyaQKBgQCXGj/kERH1zI8euDWdk1Tnz8+90A8Vc27DyxrshSQ8Z1EUhmI3\nqfvJyI/O1pNbGM5W0+pwzWSTsWnbGK/2YARRdubBX4z2c2mfsiQjqAZfhoILTOfr\nT11rXsQ2rs2yWgzoDLRgotJ2Ubu9EBVRbxrUPdPC50ZFUroUWLFBiNzFwQKBgHs5\nBEr0Ead6cibtYgLv3pWmehlF8NVHROqb9ZgNuEuNg0FMFsF47wjqUHNNM7BQLflg\nJeYS6UOYtxndiwp9S5U7FomaJs8EDsNqpkb7i4CuRxNXCe0EoeOnYQDtrA93e+rF\nn3BqStLiu82aF87HOFaiTu/PDaxGqeJNOOHer765AoGBAJ+dt8dlp7WOWQ4K9Y4I\nWYU0+f1oDJ/ahp5IO2ySmlf2OjpYf50izKfTpho/52m+heSnmVC8Bteg6RRdoQzm\n2QLDuU1FXEjPpJLM7bID+vMyZ+iwm27nlKnx53Fz4RrujZaEiFPp1z0APKtIkQEM\ni42rPNClso9klwlx3WlzSg9P\n-----END PRIVATE KEY-----\n",
+  "client_email": "akindpepe@synthetic-hall-226120.iam.gserviceaccount.com",
+  "client_id": "104684400768983600743",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/akindpepe%40synthetic-hall-226120.iam.gserviceaccount.com"
+}

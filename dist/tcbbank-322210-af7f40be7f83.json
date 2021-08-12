@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "tcbbank-322210",
+  "private_key_id": "af7f40be7f8367db0ada2917e9182c3e8afa533c",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCUJnxY8amDtN/N\nX89OornliJJOuEl5GGWBTCH538PKoh1LXThc+0yM84PxqNVGo5C+CJP+3xN6kZKg\nTwhxcCsuI7OSwMU2+jX5olA4UflN5ZttweW6fqo/hrYBhciWUQnTxjGw4+RmARzx\nrmhCbGQZU5KpWvqPhdkwsUuIrSNVWX1K1wwYrV9IwwmwsYs82XuIRoyp8YFVWe6P\nD6krI+ImQ86gs5ol58kQfS+9GwEuBShJRAIdA4XpUu866JcEQNOcxOO7mCJvnbIo\nOZtTp5cLuWsfG4Kv7svf+ySyM/sm/Zj66vTbArn4bVejlk4fjoXOYdhP6jwXG8Su\nPrmu2UgLAgMBAAECggEAAKxtNms9rG8CqYxxK0/d2uh5cCgdn+edpKhDc7vifq4I\nXKmZezUIEyadlB48ykHAeUOiyU58m3Uidwwg4lu7GxzGX4bgXjsy8bcFGS/CHVC9\n0d9N/o72laAPIPzDZNzjyhnsdahHh01n2LA92qMihFQNqsvh2GTI5zSMlb5FGh0n\nhrL0K2m3rhn8UvtoaCIGi+Bm2k80C6LzXHRs2uGkRNfF5sAf+Ksh6N7elAft19pf\nrcz2f6PcNwyokZ/aRtmBuO/8TPpKK6LOzyajTRF54zmW3WZ7WBF9GOoYJeKDRT8u\nUNXA8P1rjgnA7ZVeVr8xcbGRq3C2on+4MxPEJZX9MQKBgQDQfDT8zBiSp1zpqEFI\nlAru2StwX7qGVHMZp/HzzhEFT/NftYiM+HRMgAt+SWRrOO6PdyHZoFqr0PMdBlsv\nqh0ecXRvytviibisOU+MfM5Q1VOxTUid/mMpYh55doyV5wgehNT2PeN2HsSNfQr7\nftauiA8dgqUZZIl1Qm/ULDEUWwKBgQC16h8g05+YyCHat8uuvtfaNFfEcpsk5eRX\njB25E0h8FoF9WxTfBvwK+1Wf0LNR9AIh08C+SDz+J+oD96VG4NjIAUCw7dEL7Fzq\nooOqf0a6UUOhW9D1k5yVrO+UnqfIhv45B0yHKN8rtVetJYn/YyNOKg5KApsw512I\nu3NdqsAqEQKBgCdQJJW+zqtoz8ZnqdfLwrwDS4OnKX8HEaU23BMDOoZr6xKTIqqi\ndxut0X0AzeTCGYoIBuQIrtBTWGSSvEMiqtcAwdoKwKfZHG+tZuiw6B6p+1wlnJne\nTEiTbfeteRkTNZ67oYTFasztRFcByz5dTpIeqesApa1CHgF0g63Yn3CdAoGAFhvf\nLqEpq2rfWnKuCY3eNAHajOCU5HYgO1enISAr1hDyKecQ8U4rAbasIGE/+fza6XuP\n2FB1QTpeoZ7Ocn/POPeWAirVFkrivA2GTQls8iYAPzMmgUIwbKx47aoeoCtv6ERv\n05lvDiPbBQsj62sEFnLcC7inXdkwr/aAPekLs9ECgYAR+3sSsD7dsjpyoRZ/vnF7\n4vdouPeqlFPiYs+JB2QnxD2CewF6V2l9jn2UEjhy7aPxy5EUNlMBrcMXqHyRCTbK\nYcqs9+v9o7nSNl0HsAO3OJ7/RMzjTmkEOh3kXEkLeoRqm+qC5k2BBNcwOGdcF8lr\nvwqhdZKlgYJk88yxgYw7SA==\n-----END PRIVATE KEY-----\n",
+  "client_email": "cathaybk@tcbbank-322210.iam.gserviceaccount.com",
+  "client_id": "109759420478746989280",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/cathaybk%40tcbbank-322210.iam.gserviceaccount.com"
+}
