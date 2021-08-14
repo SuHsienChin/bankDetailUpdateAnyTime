@@ -1,7 +1,12 @@
 from websocket_server import WebsocketServer
 import json
 import tcbBank
+import threading
+import globalVar
 
+browser = object
+# tcbBankProcessFlag = 0
+# cathayBankProcessFlag = 0
 
 
 # Called for every client connecting (after handshake)
@@ -29,11 +34,15 @@ def send_data(client, message):
 
 
 def spider_controller(controler, client):
+    global browser
+    global tcbBankProcessFlag
     controler_type = controler["type"]
+
     if controler_type == "合庫":
         # 合庫程式開始
         browser = tcbBank.startTcbBank()
 
+        print(globalVar.tcbBankProcessFlag)
         # 將合庫的驗證圖片轉成Base64二進制，傳送到前端網頁
         picBase64 = tcbBank.encodePicToBase64('authPic.png')
         picBase64 = str(picBase64)
@@ -43,10 +52,15 @@ def spider_controller(controler, client):
         print('回傳圖片二制碼')
         send_data(client, returnPicBase64)
 
-        # if controler_type == "合庫驗證碼":
-        #     print(controler["content"])
-        #
+    if controler_type == "合庫驗證碼":
+        print(controler["content"])
+        # 使用多執行緒
+        t = threading.Thread(target=tcbBank.waitInputAuthCode, args=(controler["content"], browser))
+        t.start()
         # tcbBank.waitInputAuthCode(controler["content"], browser)
+        print('執行多執行緒')
+        print(globalVar.tcbBankProcessFlag)
+
 
 
     if controler_type == "國泰":
