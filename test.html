@@ -54,6 +54,7 @@
                 <button onclick="sendTcbBank()">啟動合庫</button>
 
                 <img id="mypic" src=""/>
+                <button onclick="sendTcbBankAuthCode()">送出驗證碼</button>
             </div>
 
         <script type="text/javascript">
@@ -105,6 +106,15 @@
                 var dataSend = {
                     'content': '0000',
                     'type': '合庫'
+                };
+                ws.send(JSON.stringify(dataSend));
+                oWin.val('');
+            }
+
+            function sendTcbBankAuthCode(){
+                var dataSend = {
+                    'content': $('#messagewin').val(),
+                    'type': '合庫驗證碼'
                 };
                 ws.send(JSON.stringify(dataSend));
                 oWin.val('');

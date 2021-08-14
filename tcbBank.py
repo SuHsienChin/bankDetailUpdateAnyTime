@@ -56,61 +56,65 @@ def startTcbBank():
     img = img.crop((authPicLeft, authPicRight, authPicTop, authPicBottom))
     img.save('authPic.png')
 
+    return browser
 
 
 
-    # authCode = input("輸入圖型驗證碼：")
-    #
-    # authInput = browser.find_element_by_id('viewFragment1:form1:gCode')
-    # authInput.send_keys(authCode)
-    #
-    # time.sleep(1)
-    #
-    # loginLink = browser.find_element_by_id("viewFragment1:form1:btnLogin")
-    # loginLink.click()
-    #
-    # time.sleep(15)
-    #
-    # while 1:
-    #     print('資料更新中' + time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()))
-    #     detailQueryBtn = browser.find_element_by_id("viewFragment1:form1:btnQuery")
-    #     detailQueryBtn.click()
-    #     time.sleep(5)
-    #
-    #     table = browser.find_element_by_xpath("//*[@id='viewFragment1:form1:result']")
-    #     trs = table.find_elements_by_tag_name('tr')
-    #
-    #     # -------
-    #     # 以下是連到google試算表，把資料寫入
-    #     #
-    #     # -------
-    #
-    #     Json = "synthetic-hall-226120-a48b5e640b39.json"  # Json 的單引號內容請改成妳剛剛下載的那個金鑰
-    #     Url = ['https://spreadsheets.google.com/feeds']
-    #
-    #     Connect = SAC.from_json_keyfile_name(Json, Url)
-    #     GoogleSheets = gspread.authorize(Connect)
-    #
-    #     Sheet = GoogleSheets.open_by_key('1YrXFibvZs-wS4DX0IGqTtSNnn7VQudLZgeE9dRt1Gaw')  # 這裡請輸入妳自己的試算表代號
-    #     Sheets = Sheet.sheet1
-    #
-    #     Sheets.clear()
-    #
-    #     dataTitle = ["序號", "交易日期", "交易行庫", "提款金額", "存款金額", "餘額", "支票號碼"]
-    #     Sheets.append_row(dataTitle)
-    #
-    #     for i in range(1, 30):
-    #         tds = trs[i].find_elements_by_tag_name('td')
-    #         datas = []
-    #         for td in tds:
-    #             datas.append(td.text)
-    #         Sheets.append_row(datas)
-    #     time.sleep(30)
+
 
 def encodePicToBase64(picName):
     base64_data = ''
     with open("authPic.png", "rb") as f:
         # b64encode是编码，b64decode是解码
         base64_data = base64.b64encode(f.read())
-        # base64.b64decode(base64data)
     return base64_data
+
+def waitInputAuthCode(authCode,browser):
+    input(authCode)
+    authCode = input("輸入圖型驗證碼：")
+
+    authInput = browser.find_element_by_id('viewFragment1:form1:gCode')
+    authInput.send_keys(authCode)
+
+    time.sleep(1)
+
+    loginLink = browser.find_element_by_id("viewFragment1:form1:btnLogin")
+    loginLink.click()
+
+    time.sleep(15)
+
+    while 1:
+        print('資料更新中' + time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()))
+        detailQueryBtn = browser.find_element_by_id("viewFragment1:form1:btnQuery")
+        detailQueryBtn.click()
+        time.sleep(5)
+
+        table = browser.find_element_by_xpath("//*[@id='viewFragment1:form1:result']")
+        trs = table.find_elements_by_tag_name('tr')
+
+        # -------
+        # 以下是連到google試算表，把資料寫入
+        #
+        # -------
+
+        Json = "synthetic-hall-226120-a48b5e640b39.json"  # Json 的單引號內容請改成妳剛剛下載的那個金鑰
+        Url = ['https://spreadsheets.google.com/feeds']
+
+        Connect = SAC.from_json_keyfile_name(Json, Url)
+        GoogleSheets = gspread.authorize(Connect)
+
+        Sheet = GoogleSheets.open_by_key('1YrXFibvZs-wS4DX0IGqTtSNnn7VQudLZgeE9dRt1Gaw')  # 這裡請輸入妳自己的試算表代號
+        Sheets = Sheet.sheet1
+
+        Sheets.clear()
+
+        dataTitle = ["序號", "交易日期", "交易行庫", "提款金額", "存款金額", "餘額", "支票號碼"]
+        Sheets.append_row(dataTitle)
+
+        for i in range(1, 30):
+            tds = trs[i].find_elements_by_tag_name('td')
+            datas = []
+            for td in tds:
+                datas.append(td.text)
+            Sheets.append_row(datas)
+        time.sleep(30)
