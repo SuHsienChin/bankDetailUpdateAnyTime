@@ -14,8 +14,13 @@ import gspread
 from oauth2client.service_account import ServiceAccountCredentials as SAC
 
 import globalVar
+from selenium.common.exceptions import TimeoutException
+from selenium.webdriver.common.by import By
+import selenium.webdriver.support.expected_conditions as EC
+import selenium.webdriver.support.ui as ui
 
-#from PIL import Image
+
+# from PIL import Image
 
 def startTcbBank():
     try:
@@ -60,13 +65,10 @@ def startTcbBank():
         img = Image.open('authPic.png')
         img = img.crop((authPicLeft, authPicRight, authPicTop, authPicBottom))
         img.save('authPic.png')
-
         return browser
     except:
-        tcbBankProcessFlag = '圖型驗證輸入錯誤'
+        globalVar.tcbBankProcessFlag = '圖型驗證輸入錯誤'
         return
-
-
 
 
 def encodePicToBase64(picName):
@@ -76,7 +78,8 @@ def encodePicToBase64(picName):
         base64_data = base64.b64encode(f.read())
     return base64_data
 
-def waitInputAuthCode(authCode,browser):
+
+def waitInputAuthCode(authCode, browser):
     # input(authCode)
     # authCode = input("輸入圖型驗證碼：")
     global tcbBankProcessFlag
@@ -128,5 +131,5 @@ def waitInputAuthCode(authCode,browser):
                 Sheets.append_row(datas)
             time.sleep(30)
     except:
-        tcbBankProcessFlag = '合庫被搶登，請重新登入'
+        globalVar.tcbBankProcessFlag = '合庫程式錯誤，請重新登入'
         return
