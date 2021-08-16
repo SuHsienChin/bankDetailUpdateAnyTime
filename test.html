@@ -40,17 +40,18 @@
         <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
     </head>
     <body>
-        <h2>聊天室</h2>
+        <h2>查帳明細伺服器</h2>
             <div id="chat">
-                <textarea id="history" cols="80" rows="20"></textarea>
+<!--                <textarea id="history" cols="80" rows="20"></textarea>-->
             </div>
 
             <div id="win">
-                <textarea id="messagewin" cols="80" rows="5"></textarea>
+<!--                <textarea id="messagewin" cols="80" rows="5"></textarea>-->
+                <input id="messagewin">
             </div>
 
             <div id="sse">
-                <button onclick="sendMessage()">傳送對話</button>
+<!--                <button onclick="sendMessage()">傳送對話</button>-->
                 <button onclick="sendTcbBank()">啟動合庫</button>
 
                 <img id="mypic" src=""/>
@@ -73,11 +74,20 @@
                 ws.onmessage = function (evt) {
                     var dataReceive = evt.data;
                     //console.log("資料已接收..."+dataReceive);
-                    //console.log(dataReceive);
                     console.log(JSON.parse(dataReceive)[1]['picBase64']);
-                    //$('#mypic').attr('src',atob(JSON.parse(dataReceive)[1]['picBase64']))
-                    $('#mypic').attr('src','data:image/png;base64,' + JSON.parse(dataReceive)[1]['picBase64'])
-                    $('#history').val($('#history').val()+dataReceive+"\n");
+                    var serverType = JSON.parse(dataReceive)[1]['type'];
+
+                    // 新增連線，伺服器回傳合庫處理狀態
+                    if(serverType === "newClient"){
+
+                    }
+
+                    // 顯示合庫圖型驗證碼
+                    if(serverType === "changePic"){
+                        $('#mypic').attr('src','data:image/png;base64,' + JSON.parse(dataReceive)[1]['picBase64'])
+                        $('#history').val($('#history').val()+dataReceive+"\n");
+                    }
+
                 };
 
                 ws.onclose = function() {

@@ -14,17 +14,13 @@ import gspread
 from oauth2client.service_account import ServiceAccountCredentials as SAC
 
 import globalVar
-from selenium.common.exceptions import TimeoutException
-from selenium.webdriver.common.by import By
-import selenium.webdriver.support.expected_conditions as EC
-import selenium.webdriver.support.ui as ui
-
+import json
 
 # from PIL import Image
 
 def startTcbBank():
     try:
-        globalVar.tcbBankProcessFlag = "合庫查帳啟動中"
+        globalVar.tcbBankProcessFlag = 1 # 啟動中
         chrome_options = Options()
         chrome_options.add_experimental_option("excludeSwitches", ['enable-automation', 'enable-logging'])
         browser = webdriver.Chrome(options=chrome_options)
@@ -60,14 +56,14 @@ def startTcbBank():
         authPicLeft = authPic.location['x']
         authPicRight = authPic.location['x'] + authPic.size['width']
         authPicTop = authPic.location['y']
-        authPicBottom = authPic.location['y'] + authPic.size['height'] + 5
+        authPicBottom = authPic.location['y'] + authPic.size['height'] + 25
 
         img = Image.open('authPic.png')
         img = img.crop((authPicLeft, authPicRight, authPicTop, authPicBottom))
         img.save('authPic.png')
         return browser
     except:
-        globalVar.tcbBankProcessFlag = '圖型驗證輸入錯誤'
+        globalVar.tcbBankProcessFlag = 3  # 伺服器執行錯誤，重新執行
         return
 
 
@@ -79,12 +75,11 @@ def encodePicToBase64(picName):
     return base64_data
 
 
-def waitInputAuthCode(authCode, browser):
+def waitInputAuthCode(authCode, browser, server, client):
     # input(authCode)
     # authCode = input("輸入圖型驗證碼：")
-    global tcbBankProcessFlag
     try:
-        tcbBankProcessFlag = '正在更新資料'
+        globalVar.tcbBankProcessFlag = 2  # 正在更新資料
         authInput = browser.find_element_by_id('viewFragment1:form1:gCode')
         authInput.send_keys(authCode)
 
@@ -97,6 +92,7 @@ def waitInputAuthCode(authCode, browser):
 
         while 1:
             print('資料更新中' + time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()))
+            # server.send_message(client, json.dumps(['data', {'tcbBabkstatus': '2', 'type':'newClient'}]))
             detailQueryBtn = browser.find_element_by_id("viewFragment1:form1:btnQuery")
             detailQueryBtn.click()
             time.sleep(5)
@@ -131,5 +127,6 @@ def waitInputAuthCode(authCode, browser):
                 Sheets.append_row(datas)
             time.sleep(30)
     except:
-        globalVar.tcbBankProcessFlag = '合庫程式錯誤，請重新登入'
-        return
+        globalVar.tcbBankProcessFlag = 3  # 伺服器執行錯誤，重新執行
+        # server.send_message(client, json.dumps(['data', {'tcbBabkstatus': '3', 'type': 'newClient'}]))
+        return globalVar.tcbBankProcessFlag
